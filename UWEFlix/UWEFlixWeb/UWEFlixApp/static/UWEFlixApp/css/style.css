@@ -1,0 +1,245 @@
+
+/* Main */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(39, 40, 34);
+}
+
+/* Navbar */
+
+#navbar {
+    height: 70px;
+    position: relative;
+    background-color: white;
+}
+
+#uwelogo {
+    position: absolute;
+    left: 10px;
+}
+
+#uweflixlogo {
+    position: absolute;
+    top: 3px;
+    left: 115px;
+    font: 50px 'Monofett', cursive;
+    color: black;
+    text-decoration: none;
+}
+
+#userlinks {
+    position: absolute;
+    top: 0px;
+    left: 400px;
+    list-style-type: none;
+    font: 20px 'Source Sans Pro', sans-serif;
+    color: black;
+}
+
+#userlinks li {
+    margin-left: 25px;
+    margin-right: 25px;
+    float: left;
+}
+
+#userlinks a {
+    text-decoration: none;
+    color: black;
+}
+
+#userlinks a:hover {
+    color: gray;
+}
+
+#dashboard {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    font: 20px 'Source Sans Pro', sans-serif;
+    color: black;
+}
+
+#signinButtonForm {
+    position: absolute;
+    right: 20px;
+}
+
+#signinButton {
+    background: none;
+    border: none;
+    padding: 0;
+    font: 20px 'Source Sans Pro', sans-serif;
+    color: black;
+    cursor: pointer;
+}
+
+#signinButton:hover {
+    color: gray;
+}
+
+#signoutButtonForm {
+    position: absolute;
+    right: 20px;
+}
+
+#signoutButton {
+    background: none;
+    border: none;
+    padding: 0;
+    font: 20px 'Source Sans Pro', sans-serif;
+    color: black;
+    cursor: pointer;
+}
+
+#signoutButton:hover {
+    color: gray;
+}
+
+#signedinas {
+    color: black;
+    margin-right: 10px;
+}
+
+/* Sign-in Popup */
+
+.backdrop {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#signinpopup {
+    position: fixed;
+    width: 400px;
+    height: 275px;
+    top: calc(50vh - 138px);
+    left: calc(50vw - 200px);
+    background-color: white;
+}
+
+#signinpopup h1 {
+    font: 30px 'Source Sans Pro', sans-serif;
+    color: black;
+    margin-left: 20px;
+}
+
+#signinpopup label {
+    font: 15px 'Source Sans Pro', sans-serif;
+    color: black;
+    margin-left: 20px;
+}
+
+#signinpopup input {
+    position: absolute;
+    left: 100px
+}
+
+#paymentpopup {
+    position: fixed;
+    width: 400px;
+    height: 300px;
+    top: calc(50vh - 150px);
+    left: calc(50vw - 200px);
+    background-color: white;
+}
+
+#paymentpopup h1 {
+    font: 30px 'Source Sans Pro', sans-serif;
+    color: black;
+    margin-left: 20px;
+}
+
+#paymentpopup label, p {
+    font: 15px 'Source Sans Pro', sans-serif;
+    color: black;
+    margin-left: 20px;
+}
+
+#paymentpopup input {
+    position: absolute;
+    left: 125px;
+}
+
+#close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font: 15px 'Source Sans Pro', sans-serif;
+    color: black;
+}
+
+.errorMsg {
+    margin-left: 100px;
+    font: 15px 'Source Sans Pro', sans-serif;
+    color: red;
+}
+
+/* Content */
+
+#content {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+}
+
+#content h1, h2, p, label, th, td {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+}
+
+#content h1 {
+    border: 0px solid red;
+}
+
+#showingFilms {
+    border: 0px solid lime;
+    height: 300px;
+}
+
+#showingFilms ul {
+    margin-top: 0px;
+    padding: 0px;
+    list-style-type: none;
+    border: 0px solid orange;
+}
+
+#showingFilms li {
+    float: left;
+    clear: right;
+    border: 0px solid blue;
+    margin-right: 30px;
+}
+
+/* Home */
+
+#nowshowing ul, a {
+    list-style-type: none;
+}
+
+/* Film */
+
+#discount {
+    color: lime;
+}
+
+/* Admin */
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid white;
+}
+
+#action {
+    float: left;
+}
+
+#actionButton {
+    margin-left: 2px;
+    margin-right: 2px;
+}

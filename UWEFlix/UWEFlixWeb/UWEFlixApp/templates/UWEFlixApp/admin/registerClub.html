@@ -1,0 +1,37 @@
+{% block registerClub %}
+<h2>Register Club</h2>
+    <!-- Submits with query params: password, name, streetNo, streetName, postCode, landline, mobile, email, firstname, lastName, dob -->
+    <form action="{% url 'manager' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="accountID" value="{{ account.id }}">
+        <input type="hidden" name="addClub" value="True">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" maxlength="20" size="14">
+        <br><label for="streetNo">Street No.:</label>
+        <input type="text" id="streetNo" name="streetNo" size="1">
+        <br><label for="streetName">Street Name:</label>
+        <input type="text" id="streetName" name="streetName" maxlength="20" size="14">
+        <br><label for="postCode">Postcode:</label>
+        <input type="text" id="postCode" name="postCode" maxlength="7" size="8">
+        <br><label for="landline">Landline:</label>
+        <input type="text" id="landline" name="landline" maxlength="11" size="14">
+        <br><label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile" maxlength="11" size="14">
+        <br><label for="email">Email:</label>
+        <input type="text" id="email" name="email" maxlength="30" size="14">
+        <br><label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" maxlength="15" size="8">
+        <br><label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" maxlength="15" size="8">
+        <br><label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+        <br><br><input type="submit" value="Add Club">
+    </form>
+    {% if clubReg %}
+        {% if clubRegSuccessful %}
+            <p>Club registered successfully!</p>
+        {% else %}
+            <p>Error! Club was not registered.</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UWEFlix</title>
+    </head>
+    <body>
+        {% csrf_token %}
+        <h2>Booking successful!</h2>
+        <p>
+            Booking ID: {{ bookingID }}
+            <br>Film: {{ film }}
+            <br>Date: {{ date }}
+            <br>Time: {{ time }}
+            <br>Seats: {{ noTickets }}
+        </p>
+        <form action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Back to home">
+        </form>
+    </body>
+</html>

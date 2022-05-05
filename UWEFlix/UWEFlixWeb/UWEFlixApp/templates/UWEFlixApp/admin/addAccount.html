@@ -1,0 +1,43 @@
+{% block addAccount %}
+<h2>Add Account</h2>
+    <form action="{% url 'accounts' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="accountID" value="{{ account.id }}">
+        <input type="hidden" name="addAccount" value="True">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" maxlength="30" size="14">
+        <br><label for="clubID">Club:</label>
+
+        <select id="clubID" name="clubID">
+            <option value="None">None</option>
+            {% for club in clubs %}
+                <option value="{{ club.id }}">{{ club.name }}</option>
+            {% endfor %}
+        </select>
+
+        <br><label for="type">Type:</label>
+        
+        <select id="type" name="type">
+            <option value="Club Representative">Club Representative</option>
+            <option value="Accounts Department">Accounts Department</option>
+            <option value="Cinema Manager">Cinema Manager</option>
+        </select>
+
+        <br><label for="cardNo">Card No.:</label>
+        <input type="text" id="cardNo" name="cardNo">
+        <br><label for="expiryDate">Expiry Date:</label>
+        <input type="date" id="expiryDate" name="expiryDate">
+        <br><label for="discount">Discount:</label>
+        <input type="text" id="discount" name="discount">
+        <br><label for="password">Password:</label>
+        <input type="text" id="password" name="password">
+        <br><br><input type="submit" value="Add Account">
+    </form>
+    {% if filmAdd %}
+        {% if filmAddSuccessful %}
+            <p>Film added successfully!</p>
+        {% else %}
+            <p>Error! Film was not added.</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

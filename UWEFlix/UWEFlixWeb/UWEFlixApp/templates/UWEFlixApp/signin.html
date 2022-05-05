@@ -1,0 +1,25 @@
+<div class="backdrop">
+</div>
+<div id="signinpopup">
+    <a id="close" href=""><b>Close</b></a>
+    <h1><b>Sign in</b></h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="signinButtonPressed" value="True">
+        <input type="hidden" name="signin" value="True">
+        <label for="accountType"><b>Account type:</b></label>
+        <select id="accountType" name="accountType">
+            <option>Club Representative</option>
+            <option>Accounts Department</option>
+            <option>Cinema Manager</option>
+        </select>
+        <br><br><label for="accountID"><b>ID:</b></label>
+        <input id="accountID" name="accountID" type="text">
+        <br><br><label for="accountPassword"><b>Password:</b></label>
+        <input id="accountPassword" name="accountPassword" type="password">
+        <br><br><input id="signinbutton" type="submit" value="Sign in">
+        {% if signinFailed %}
+        <br><p class="errorMsg"><b>Error! Incorrect credentials.</b></p>
+        {% endif %}
+    </form>
+</div>

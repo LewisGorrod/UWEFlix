@@ -1,0 +1,20 @@
+{% block addScreen %}
+<h2>Add Screen</h2>
+    <form action="{% url 'manager' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="accountID" value="{{ account.id }}">
+        <input type="hidden" name="addScreen" value="True">
+        <label for="number">Number:</label>
+        <input type="text" id="number" name="number" maxlength="2" size="1">
+        <br><label for="noSeats">No. Seats:</label>
+        <input type="text" id="noSeats" name="noSeats" size="1">
+        <br><br><input type="submit" value="Add Screen">
+    </form>
+    {% if screenAdd %}
+        {% if screenAddSuccessful %}
+            <p>Screen added successfully!</p>
+        {% else %}
+            <p>Error! Screen was not added.</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

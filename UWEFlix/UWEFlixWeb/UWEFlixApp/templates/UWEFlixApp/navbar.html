@@ -1,0 +1,35 @@
+{% load static %}
+<div id="navbar">
+    <img id="uwelogo" src="{% static 'UWEFlixApp/images/uwelogo.svg' %}" alt="UWE logo"><br>
+    <!-- <a id="uweflixlogo" href="{% url 'home' %}">UWEFlix</a> -->
+    <a href="{% url 'home' %}"><img id="uweflixlogo" src="{% static 'UWEFlixApp/images/uweflixlogo.png' %}" alt="UWEFlix logo" height="60px"></a>
+    {% if account and account.type == "Cinema Manager" %}
+        <p id="dashboard"><b>Cinema Manager Dashboard</b></p>
+    {% elif account and account.type == "Accounts Department" %}
+        <p id="dashboard"><b>Accounts Department Dashboard</b></p>
+    {% else %}
+        <ul id="userlinks">
+            <li><a href="{% url 'home' %}"><b>Home</b></a></li>
+            <li><a href="{% url 'home' %}#nowShowing"><b>Now Showing</b></a></li>
+            <li><a href="{% url 'home' %}#upcoming"><b>Upcoming</b></a></li>
+        </ul>
+    {% endif %}
+    {% if account %}
+        {% if account.type == "Club Representative" %}
+            <form id="signoutButtonForm" action="" method="post">
+        {% else %}
+            <form id="signoutButtonForm" action="{% url 'home' %}" method="post">
+        {% endif %}
+                {% csrf_token %}
+                <input type="hidden" name="signoutButtonPressed" value="True">
+                <label id="signedinas" for="signoutButton">{{ account }}</label>
+                <input id="signoutButton" type="submit" value="Sign out" style="font-weight: bold;">
+            </form>
+    {% else %}
+        <form id="signinButtonForm" action="" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="signinButtonPressed" value="True">
+            <input id="signinButton" type="submit" value="Sign in" style="font-weight: bold;">
+        </form>
+    {% endif %}
+</div>

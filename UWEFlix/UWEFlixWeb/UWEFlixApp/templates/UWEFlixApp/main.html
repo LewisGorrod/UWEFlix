@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Monofett&family=Source+Sans+Pro:wght@200;600;700&display=swap" rel="stylesheet">
+        <title>UWEFlix</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'UWEFlixApp/css/style.css' %}">
+        {% if signinButtonPressed or paymentButtonPressed %}
+            <style>
+                body {
+                    overflow-y: hidden;
+                }
+            </style>
+        {% endif %}
+    </head>
+    <body>
+        {% include 'UWEFlixApp/navbar.html' %}
+        {% block content %}
+        {% endblock %}
+        {% if signinButtonPressed %}
+            {% include 'UWEFlixApp/signin.html' %}
+        {% elif paymentButtonPressed %}
+            {% include 'UWEFlixApp/visitor/payment.html' %}
+        {% endif %}
+    </body>
+</html>

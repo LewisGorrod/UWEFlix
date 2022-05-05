@@ -1,0 +1,32 @@
+{% block addShowing %}
+<h2>Add Showing</h2>
+    <form action="{% url 'manager' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="accountID" value="{{ account.id }}">
+        <input type="hidden" name="addShowing" value="True">
+        <label for="screenID">Screen:</label>
+        <select id="screenID" name="screenID">
+            {% for screen in screens %}
+                <option value="{{ screen.id }}">{{ screen }}</option>
+            {% endfor %}
+        </select>
+        <br><label for="filmID">Film:</label>
+        <select id="filmID" name="filmID">
+            {% for film in films %}
+                <option value="{{ film.id }}">{{ film }}</option>
+            {% endfor %}
+        </select>
+        <br><label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+        <br><label for="time">Time:</label>
+        <input type="time" id="time" name="time">
+        <br><br><input type="submit" value="Add Showing">
+    </form>
+    {% if filmAdd %}
+        {% if filmAddSuccessful %}
+            <p>Film added successfully!</p>
+        {% else %}
+            <p>Error! Film was not added.</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

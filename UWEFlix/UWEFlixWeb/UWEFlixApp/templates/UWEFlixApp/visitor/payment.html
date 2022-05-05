@@ -1,0 +1,34 @@
+<div class="backdrop">
+</div>
+<div id="paymentpopup">
+    <a id="close" href=""><b>Close</b></a>
+    <h1><b>Payment</b></h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="payment" value="True">
+        <input type="hidden" name="showingID" value="{{ showingID }}">
+        <input type="hidden" name="noTickets" value="{{ noTickets }}">
+        <input type="hidden" name="cost" value="{{ cost }}">
+        <label for="cardNo"><b>Card number:</b></label>
+        <input type="text" name="cardNo" maxlength="16" size="14">
+        <br><br><label for="cvv"><b>CVV:</b></label>
+        <input type="text" name="cvv" maxlength="3" size="1">
+        <br><br><label for="expiryDate"><b>Expiry date:</b></label>
+        <input type="text" id="expiryDate" name="expiryDate" maxlength="5" size="1">
+        <br><br><label for="cardName"><b>Name on card:</b></label>
+        <input type="text" name="cardName" size="14">
+        <br><br><label><b>Cost: £{{ cost }}</b></label>
+        <input type="submit" value="Confirm payment">
+        {% if cardNoInvalid %}
+            <p class="errorMsg"><b>Please enter a valid card number.</b></p>
+        {% elif cvvInvalid %}
+            <p class="errorMsg"><b>Please enter a valid CVV.</b></p>
+        {% elif expiryDateInvalid %}
+            <p class="errorMsg"><b>Please enter a valid expiry date in the form 'mm/yy'.</b></p>
+        {% elif cardNameInvalid %}
+            <p class="errorMsg"><b>Please enter a valid card name.</b></p>
+        {% elif cardExpired %}
+            <p class="errorMsg"><b>This card has expired!</b></p>
+        {% endif %}
+    </form>
+</div>

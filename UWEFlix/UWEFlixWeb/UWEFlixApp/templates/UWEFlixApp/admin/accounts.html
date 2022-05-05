@@ -1,0 +1,14 @@
+{% extends 'UWEFlixApp/main.html' %}
+
+{% block content %}
+<div id="content">
+    <h1>Accounts Department Dashboard</h1>
+    {% include 'UWEFlixApp/admin/viewAccounts.html' %}
+    {% include 'UWEFlixApp/admin/addAccount.html' %}
+    {% include 'UWEFlixApp/admin/viewStatements.html' %}
+    {% if viewStatement %}
+        {% include 'UWEFlixApp/admin/viewStatement.html' %}
+    {% endif %}
+    <br><br>
+</div>
+{% endblock %}

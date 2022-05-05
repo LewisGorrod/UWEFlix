@@ -1,0 +1,15 @@
+{% extends 'UWEFlixApp/main.html' %}
+
+{% block content %}
+<div id="content">
+    <h1>Cinema Manager Dashboard</h1>
+    {% include 'UWEFlixApp/admin/registeredClubs.html' %}
+    {% include 'UWEFlixApp/admin/registerClub.html' %}
+    {% include 'UWEFlixApp/admin/screens.html' %}
+    {% include 'UWEFlixApp/admin/addScreen.html' %}
+    {% include 'UWEFlixApp/admin/films.html' %}
+    {% include 'UWEFlixApp/admin/addFilm.html' %}
+    {% include 'UWEFlixApp/admin/showings.html' %}
+    {% include 'UWEFlixApp/admin/addShowing.html' %}
+</div>
+{% endblock %}

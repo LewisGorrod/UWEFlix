@@ -1,0 +1,49 @@
+{% extends 'UWEFlixApp/main.html' %}
+
+{% block content %}
+<div id="content">
+    <h1>{{ film.title }}</h1>
+    <img src="/media/images/{{ film.id }}.png" alt="Film poster" height="300px">
+    <p>Duration: {{ film.duration }}<br>Age rating: {{ film.ageRating }}</p>
+    <h2>Description</h2>
+    <p>{{ film.description }}</p>
+    <h2>Buy Tickets</h2>
+    <form id="selectDate" action="">
+        <label for="date">Select date:</label>
+        <input type="hidden" name="filmID" value="{{ film.id }}">
+        <input type="date" name="date" value="{{ date }}" onchange="this.form.submit()">
+    </form>
+    {% if showings %}
+    <form id="selectTickets" action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="paymentButtonPressed" value="True">
+        <input type="hidden" name="accountID" value="{{ account.id }}">
+        <p>Select time:</p>
+        {% for showing in showings %}
+            <input type="radio" id="{{ showing.id }}" name="showingID" value="{{ showing.id }}" checked>
+            <label for="{{ showing.id }}">{{ showing.time }} ({{ showing.screen }})</label><br>
+        {% endfor %}
+        <br><label for="ticketType">Select ticket type:</label>
+        <select id="ticketType" name="ticketType">
+            <option>Student</option>
+            <option>Child</option>
+            <option>Adult</option>
+        </select>
+        <br><br><label for="noTickets">Select no. of tickets (£6 each):</label>
+        <select id="noTickets" name="noTickets">
+            <option>1</option>
+            <option>2</option>
+        </select>
+        {% if account and account.type == "Club Representative" %}
+            <br><p id="discount">Note: A club representative discount of {{ account.discount }}% will be applied at checkout.</p>
+        {% else %}
+            <br><br>
+        {% endif %}
+        <input type="submit" value="Confirm and make payment">
+    </form>
+    {% elif date %}
+        <p>There are no showings are available for this date.</p>
+    {% endif %}
+    <br><br>
+</div>
+{% endblock %}

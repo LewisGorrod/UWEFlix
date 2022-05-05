@@ -1,0 +1,32 @@
+{% extends 'UWEFlixApp/main.html' %}
+
+{% block content %}
+<div id="content">
+    <h1>Now Showing</h1>
+    <div id="showingFilms">
+        {% if showingFilms %}
+        <ul id="showingFilmsUL">
+            {% load static %}
+            {% for film in showingFilms %}
+                <li><a href="{% url 'film' %}?filmID={{ film.id }}&date={{ date }}"><img src="/media/images/{{ film.id }}.png" height="300px"></a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>There are no showings today.</p>
+        {% endif %}
+    </div>
+    <h1>Upcoming</h1>
+    <div id="upcomingFilms">
+        {% if upcomingFilms %}
+        <ol>
+            {% for film in upcomingFilms %}
+                <li><a href="{% url 'film' %}?filmID={{ film.id }}&date={{ date }}"><img src="/media/images/{{ film.id }}.png" height="300px"></a></li>
+            {% endfor %}
+        </ol>
+        {% else %}
+            <p>There are no upcoming films this month.</p>
+        {% endif %}
+    </div>
+    <br>
+</div>
+{% endblock %}

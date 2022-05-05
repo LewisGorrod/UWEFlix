@@ -1,0 +1,30 @@
+
+<h2>End of Month Statements</h2>
+{% if statements %}
+    <table id="statements">
+        <tr>
+            <th>ID</th>
+            <th>Account</th>
+            <th>Month</th>
+            <th>Actions</th>
+        </tr>
+        {% for statement in statements %}
+        <tr>
+            <td>{{ statement.id }}</td>
+            <td>{{ statement.account }}</td>
+            <td>{{ statement.month }}</td>
+            <td>
+                <form id="action" action="{% url 'accounts' %}" method="post">
+                    {% csrf_token %}
+                    <input id="actionButton" type="submit" value="View">
+                    <input type="hidden" name="accountID" value="{{ account.id }}">
+                    <input type="hidden" name="viewStatement" value="True">
+                    <input type="hidden" name="statementID" value="{{ statement.id }}">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>There are no statements this month.</p>
+{% endif %}

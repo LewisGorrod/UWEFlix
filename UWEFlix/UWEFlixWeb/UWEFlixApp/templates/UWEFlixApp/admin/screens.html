@@ -1,0 +1,34 @@
+{% block screens %}
+<h2>Screens</h2>
+    {% if screens %}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Number</th>
+                <th>No. Seats</th>
+                <th>Actions</th>
+            </tr>
+            {% for screen in screens %}
+            <tr>
+                <td>{{ screen.id }}</td>
+                <td>{{ screen.number }}</td>
+                <td>{{ screen.noSeats }}</td>
+                <td>
+                    <form id="action">
+                        <input id="actionButton" type="button" value="Edit">
+                    </form>
+                    <form id="action" action="{% url 'manager' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="accountID" value="{{ account.id }}">
+                        <input type="hidden" name="deleteScreen" value="True">
+                        <input type="hidden" name="screenID" value="{{ screen.id }}">
+                        <input id="actionButton" type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>There are no screens added.</p>
+    {% endif %}
+{% endblock %}

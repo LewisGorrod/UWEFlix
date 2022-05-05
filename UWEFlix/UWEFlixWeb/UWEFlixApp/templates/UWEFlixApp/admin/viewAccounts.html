@@ -1,0 +1,44 @@
+{% block accounts %}
+<h2>Accounts</h2>
+    {% if accounts %}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Club</th>
+                <th>Type</th>
+                <th>Card No.</th>
+                <th>Expiry Date</th>
+                <th>Discount</th>
+                <th>Password</th>
+                <th>Actions</th>
+            </tr>
+            {% for account in accounts %}
+            <tr>
+                <td>{{ account.id }}</td>
+                <td>{{ account.fullName }}</td>
+                <td>{{ account.club }}</td>
+                <td>{{ account.type }}</td>
+                <td>{{ account.cardNo }}</td>
+                <td>{{ account.expiryDate }}</td>
+                <td>{{ account.discount }}</td>
+                <td>{{ account.password }}</td>
+                <td>
+                    <form id="action">
+                        <input id="actionButton" type="button" value="Edit">
+                    </form>
+                    <form id="action" action="{% url 'accounts' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="accountID" value="{{ account.id }}">
+                        <input type="hidden" name="deleteAccount" value="True">
+                        <input type="hidden" name="accountID" value="{{ account.id }}">
+                        <input id="actionButton" type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>There are no accounts added.</p>
+    {% endif %}
+{% endblock %}

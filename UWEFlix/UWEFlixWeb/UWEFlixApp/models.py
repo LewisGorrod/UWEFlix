@@ -1,82 +1,82 @@
+
 from django.db import models
 
-class ClubReg(models.Model):
-    clubID = models.IntegerField(default=0)
-    name = models.CharField(max_length=200)
-    streetNo = models.IntegerField(default=0)
-    streetName = models.CharField(max_length=200)
-    postCode = models.CharField(max_length=200)
-    landline = models.CharField(max_length=200)
-    mobile = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
-    firstName = models.CharField(max_length=200)
-    lastName = models.CharField(max_length=200)
-    dob = models.DateField('Date of birth')
+class Club(models.Model):
+    name = models.CharField(max_length=20)
+    streetNo = models.IntegerField()
+    streetName = models.CharField(max_length=20)
+    postCode = models.CharField(max_length=7)
+    landline = models.CharField(max_length=11)
+    mobile = models.CharField(max_length=11)
+    email = models.CharField(max_length=30)
+    firstName = models.CharField(max_length=15)
+    lastName = models.CharField(max_length=15)
+    dob = models.DateField()
     
     def __str__(self):
-        return f"{self.clubID}, {self.name}, {self.streetNo}, {self.streetName}, {self.postCode}, {self.landline}, {self.mobile}, {self.email}, {self.firstName}, {self.lastName}, {self.dob}"
+        return f"{self.name}"
 
 class Account(models.Model):
-    accountID = models.IntegerField(default=0)
-    clubID = models.ForeignKey(ClubReg, on_delete=models.CASCADE)
-    cardNo = models.IntegerField(default=0)
-    expiryDate = models.DateField('Expiry date')
-    discount = models.FloatField(default=0.0)
+    fullName = models.CharField(max_length=30, null=True)
+    type = models.CharField(max_length=20)
+    club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True)
+    cardNo = models.IntegerField(null=True)
+    expiryDate = models.DateField(null=True)
+    discount = models.FloatField(null=True)
+    password = models.CharField(max_length=20)
 
     def __str__(self):
-        return f"{self.accountID}, {self.clubID}, {self.cardNo}, {self.expiryDate}, {self.discount}"
+        return f"{self.fullName} ({self.type})"
 
-class EndOfMonthStatement(models.Model):
-    statementID = models.IntegerField(default=0)
-    accountID = models.ForeignKey(Account, on_delete=models.CASCADE)
-    month = models.DateField('Month')
+class Statement(models.Model):
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    month = models.DateField()
 
     def __str__(self):
-        return f"{self.statementID}, {self.accountID}, {self.month}"
+        return f"{self.account} {self.month}"
 
 class Transaction(models.Model):
-    transactionID = models.IntegerField(default=0)
-    accountID = models.ForeignKey(Account, on_delete=models.CASCADE)
-    purchaseDateTime = models.DateTimeField('Purchase date/time')
-    noTickets = models.IntegerField(default=0)
-    cost = models.FloatField(default=0.0)
-    paymentType = models.CharField(max_length=100)
+    account = models.ForeignKey(Account, on_delete=models.CASCADE, null=True)
+    statement = models.ForeignKey(Statement, on_delete=models.CASCADE, null=True)
+    date = models.DateField()
+    cost = models.FloatField()
+    paymentMethod = models.CharField(max_length=6)
 
     def __str__(self):
-        return f"{self.transactionID}, {self.accountID}, {self.purchaseDateTime}, {self.noTickets}, {self.cost}, {self.paymentType}"
+        return "{} {} £{:.2f} {}".format(self.account, self.date, self.cost, self.paymentMethod)
 
 class Screen(models.Model):
-    screenID = models.IntegerField(default=0)
-    screenNo = models.IntegerField(default=0)
-    noSeats = models.IntegerField(default=0)
+    number = models.IntegerField()
+    noSeats = models.IntegerField()
 
     def __str__(self):
-        return f"{self.screenID}, {self.screenNo}, {self.noSeats}"
+        return f"Screen {self.number}"
 
 class Film(models.Model):
-    filmID = models.IntegerField(default=0)
-    title = models.CharField(max_length=100)
-    ageRating = models.CharField(max_length=100)
-    duration = models.DateTimeField('Duration')
-    trailerDescription = models.CharField(max_length=100)
+    title = models.CharField(max_length=30)
+    ageRating = models.CharField(max_length=2)
+    duration = models.TimeField()
+    description = models.CharField(max_length=500)
+    poster = models.ImageField(upload_to='images', blank=True)
 
     def __str__(self):
-        return f"{self.filmID}, {self.title}, {self.ageRating}, {self.duration}, {self.trailerDescription}"
+        return f"{self.title} ({self.ageRating})"
 
 class Showing(models.Model):
-    showingID = models.IntegerField(default=0)
-    screenID = models.ForeignKey(Screen, on_delete=models.CASCADE)
-    filmID = models.ForeignKey(Film, on_delete=models.CASCADE)
-    dateTime = models.DateTimeField('Showing date/time')
+    screen = models.ForeignKey(Screen, on_delete=models.CASCADE)
+    film = models.ForeignKey(Film, on_delete=models.CASCADE)
+    date = models.DateField()
+    time = models.TimeField()
 
     def __str__(self):
-        return f"{self.showingID}, {self.screenID}, {self.filmID}, {self.dateTime}"
+        return f"{self.date} {self.time} {self.screen} {self.film}"
 
 class Ticket(models.Model):
-    ticketID = models.IntegerField(default=0)
-    showingID = models.ForeignKey(Showing, on_delete=models.CASCADE)
-    type = models.CharField(max_length=100)
-    cost = models.FloatField(default=0.0)
+    transaction = models.ForeignKey(Transaction, on_delete=models.CASCADE)
+    showing = models.ForeignKey(Showing, on_delete=models.CASCADE)
+    type = models.CharField(max_length=7)
+    cost = models.IntegerField()
+    seatRef = models.CharField(max_length=3)
 
     def __str__(self):
-        return f"{self.ticketID}, {self.showingID}, {self.type}, {self.cost}"
+        return f"{self.id}"

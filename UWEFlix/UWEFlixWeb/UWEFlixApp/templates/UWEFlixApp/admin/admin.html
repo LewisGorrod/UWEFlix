@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UWEFlix</title>
+    </head>
+    <body>
+        <a href="{% url 'home' %}">Back to main site</a>
+        <h1>Admin Login</h1>
+        <p>Accounts Department</p>
+        <form action="{% url 'accounts' %}" method="post">
+            {% csrf_token %}
+            <label for="accountID">ID:</label>
+            <input id="accountID" name="accountID" type="text" size="14">
+            <input type="hidden" name="accountType" value="Accounts Department">
+            <label for="accountPassword">Password:</label>
+            <input id="accountPassword" name="accountPassword" type="password" size="14">
+            <input type="submit" value="Login">
+        </form>
+        {% if accountsLoginFailed %}
+            <p>Incorrect password!</p>
+        {% endif %}
+        <p>Cinema Manager</p>
+        <form action="{% url 'manager' %}" method="post">
+            {% csrf_token %}
+            <label for="accountID">ID:</label>
+            <input id="accountID" name="accountID" type="text" size="14">
+            <input type="hidden" name="accountType" value="Cinema Manager">
+            <label for="accountPassword">Password:</label>
+            <input id="accountPassword" name="accountPassword" type="password" size="14">
+            <input type="submit" value="Login">
+        </form>
+        {% if managerLoginFailed %}
+            <p>Incorrect password!</p>
+        {% endif %}
+    </body>
+</html>

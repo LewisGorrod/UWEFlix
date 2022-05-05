@@ -1,0 +1,1033 @@
+[
+    {
+      "model": "UWEFlixApp.Club",
+      "pk": 1,
+      "fields": {
+        "name": "UWE Football",
+        "streetNo": "4",
+        "streetName": "Corn Street",
+        "postCode": "BS247FE",
+        "landline": "01435647647",
+        "mobile": "077546573467",
+        "email": "uwefootball@uwe.co.uk",
+        "firstName": "Elliot",
+        "lastName": "McNeil",
+        "dob": "2001-05-03"
+      }
+    },
+    {
+        "model": "UWEFlixApp.Club",
+        "pk": 2,
+        "fields": {
+          "name": "UWE Tennis",
+          "streetNo": "4",
+          "streetName": "Dive Street",
+          "postCode": "BS525FG",
+          "landline": "01657458746",
+          "mobile": "07743685797",
+          "email": "uwetennis@uwe.co.uk",
+          "firstName": "John",
+          "lastName": "Smith",
+          "dob": "2001-04-11"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Club",
+        "pk": 3,
+        "fields": {
+          "name": "UWE Boxing",
+          "streetNo": "6",
+          "streetName": "Down Street",
+          "postCode": "BS426HR",
+          "landline": "01346576978",
+          "mobile": "07794856833",
+          "email": "uweboxing@uwe.co.uk",
+          "firstName": "Lewis",
+          "lastName": "Goddard",
+          "dob": "2001-08-03"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Club",
+        "pk": 4,
+        "fields": {
+          "name": "UWE Table Tennis",
+          "streetNo": "1",
+          "streetName": "Church Street",
+          "postCode": "BS638SD",
+          "landline": "01564347687",
+          "mobile": "07745745688",
+          "email": "uwetabletennis@uwe.co.uk",
+          "firstName": "Finnley",
+          "lastName": "Donald",
+          "dob": "2001-04-09"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Club",
+        "pk": 5,
+        "fields": {
+          "name": "UWE Basketball",
+          "streetNo": "7",
+          "streetName": "Jump Street",
+          "postCode": "BS574DS",
+          "landline": "01546347568",
+          "mobile": "07767845634",
+          "email": "uwebasketball@uwe.co.uk",
+          "firstName": "Daniel",
+          "lastName": "Ross",
+          "dob": "2001-02-04"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Account",
+        "pk": 1,
+        "fields": {
+          "fullName": "Elliot McNeil",
+          "type": "Club Representative",
+          "club": 1,
+          "cardNo": "645",
+          "expiryDate": "2025-05-01",
+          "discount": "10",
+          "password": "uwefootballisgood"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Account",
+        "pk": 2,
+        "fields": {
+          "fullName": "John Smith",
+          "type": "Club Representative",
+          "club": 2,
+          "cardNo": "374",
+          "expiryDate": "2024-07-01",
+          "discount": "10",
+          "password": "uwetennisisgood"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Account",
+        "pk": 3,
+        "fields": {
+          "fullName": "Lewis Goddard",
+          "type": "Club Representative",
+          "club": 3,
+          "cardNo": "938",
+          "expiryDate": "2026-08-01",
+          "discount": "10",
+          "password": "uweboxingisgood"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Account",
+        "pk": 4,
+        "fields": {
+          "fullName": "Finnley Donald",
+          "type": "Club Representative",
+          "club": 4,
+          "cardNo": "246",
+          "expiryDate": "2023-04-01",
+          "discount": "10",
+          "password": "uwetabletennisisgood"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Account",
+        "pk": 5,
+        "fields": {
+          "fullName": "Daniel Ross",
+          "type": "Club Representative",
+          "club": 5,
+          "cardNo": "933",
+          "expiryDate": "2027-08-01",
+          "discount": "10",
+          "password": "uwebasketballisgood"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Account",
+        "pk": 6,
+        "fields": {
+          "fullName": "Millie Bowl",
+          "type": "Accounts Department",
+          "cardNo": "375",
+          "expiryDate": "2028-03-01",
+          "discount": "100",
+          "password": "uweflixsucks"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Account",
+        "pk": 7,
+        "fields": {
+          "fullName": "Ben Barn",
+          "type": "Cinema Manager",
+          "cardNo": "458",
+          "expiryDate": "2023-03-01",
+          "discount": "100",
+          "password": "uweflixrules"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 1,
+        "fields": {
+          "account": 1,
+          "month": "2022-01-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 2,
+        "fields": {
+          "account": 1,
+          "month": "2022-02-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 3,
+        "fields": {
+          "account": 1,
+          "month": "2022-03-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 4,
+        "fields": {
+          "account": 2,
+          "month": "2022-01-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 5,
+        "fields": {
+          "account": 2,
+          "month": "2022-02-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 6,
+        "fields": {
+          "account": 2,
+          "month": "2022-03-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 7,
+        "fields": {
+          "account": 3,
+          "month": "2022-01-01"
+        }
+    }
+    ,
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 8,
+        "fields": {
+          "account": 3,
+          "month": "2022-02-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 9,
+        "fields": {
+          "account": 3,
+          "month": "2022-03-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 10,
+        "fields": {
+          "account": 4,
+          "month": "2022-01-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 11,
+        "fields": {
+          "account": 4,
+          "month": "2022-02-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 12,
+        "fields": {
+          "account": 4,
+          "month": "2022-03-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 13,
+        "fields": {
+          "account": 5,
+          "month": "2022-01-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 14,
+        "fields": {
+          "account": 5,
+          "month": "2022-02-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Statement",
+        "pk": 15,
+        "fields": {
+          "account": 5,
+          "month": "2022-03-01"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 1,
+        "fields": {
+          "account": 1,
+          "statement": 1,
+          "date": "2021-12-01",
+          "cost": "100",
+          "paymentMethod": "Visa"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 2,
+        "fields": {
+          "account": 1,
+          "statement": 1,
+          "date": "2021-12-09",
+          "cost": "75",
+          "paymentMethod": "Visa"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 3,
+        "fields": {
+          "account": 1,
+          "statement": 1,
+          "date": "2021-12-25",
+          "cost": "64",
+          "paymentMethod": "Visa"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 4,
+        "fields": {
+          "account": 1,
+          "statement": 2,
+          "date": "2022-01-06",
+          "cost": "100",
+          "paymentMethod": "Visa"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 5,
+        "fields": {
+          "account": 1,
+          "statement": 2,
+          "date": "2022-01-14",
+          "cost": "48",
+          "paymentMethod": "Visa"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 6,
+        "fields": {
+          "account": 1,
+          "statement": 2,
+          "date": "2022-01-27",
+          "cost": "85",
+          "paymentMethod": "Visa"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 7,
+        "fields": {
+          "account": 1,
+          "statement": 3,
+          "date": "2022-02-04",
+          "cost": "35",
+          "paymentMethod": "Visa"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 8,
+        "fields": {
+          "account": 1,
+          "statement": 3,
+          "date": "2022-02-16",
+          "cost": "82",
+          "paymentMethod": "Visa"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 9,
+        "fields": {
+          "account": 1,
+          "statement": 3,
+          "date": "2022-02-23",
+          "cost": "27",
+          "paymentMethod": "Visa"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 10,
+        "fields": {
+          "account": 2,
+          "statement": 4,
+          "date": "2021-12-03",
+          "cost": "83",
+          "paymentMethod": "Visa"
+        }
+    },
+     {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 11,
+        "fields": {
+          "account": 2,
+          "statement": 4,
+          "date": "2021-12-15",
+          "cost": "38",
+          "paymentMethod": "Visa"
+        }
+    },
+    {
+       "model": "UWEFlixApp.Transaction",
+       "pk": 12,
+       "fields": {
+         "account": 2,
+         "statement": 4,
+         "date": "2021-12-25",
+         "cost": "36",
+         "paymentMethod": "Visa"
+       }
+   },
+   {
+      "model": "UWEFlixApp.Transaction",
+      "pk": 13,
+      "fields": {
+        "account": 2,
+        "statement": 5,
+        "date": "2022-01-03",
+        "cost": "34",
+        "paymentMethod": "Visa"
+      }
+    },
+    {
+     "model": "UWEFlixApp.Transaction",
+     "pk": 14,
+     "fields": {
+       "account": 2,
+       "statement": 5,
+       "date": "2022-01-17",
+       "cost": "46",
+       "paymentMethod": "Visa"
+     }
+    },
+    {
+        "model": "UWEFlixApp.Transaction",
+        "pk": 15,
+        "fields": {
+        "account": 2,
+        "statement": 5,
+        "date": "2022-01-24",
+        "cost": "36",
+        "paymentMethod": "Visa"
+        }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 16,
+    "fields": {
+        "account": 2,
+        "statement": 6,
+        "date": "2022-02-03",
+        "cost": "34",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 17,
+    "fields": {
+        "account": 2,
+        "statement": 6,
+        "date": "2022-02-15",
+        "cost": "44",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 18,
+    "fields": {
+        "account": 2,
+        "statement": 6,
+        "date": "2022-02-25",
+        "cost": "36",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 19,
+    "fields": {
+        "account": 3,
+        "statement": 7,
+        "date": "2021-12-03",
+        "cost": "58",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 21,
+    "fields": {
+        "account": 3,
+        "statement": 7,
+        "date": "2021-12-17",
+        "cost": "12",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 22,
+    "fields": {
+        "account": 3,
+        "statement": 7,
+        "date": "2021-12-20",
+        "cost": "58",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 23,
+    "fields": {
+        "account": 3,
+        "statement": 8,
+        "date": "2022-01-07",
+        "cost": "53",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 24,
+    "fields": {
+        "account": 3,
+        "statement": 8,
+        "date": "2022-01-12",
+        "cost": "33",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 25,
+    "fields": {
+        "account": 3,
+        "statement": 8,
+        "date": "2022-01-27",
+        "cost": "48",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 26,
+    "fields": {
+        "account": 3,
+        "statement": 9,
+        "date": "2022-02-03",
+        "cost": "46",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 27,
+    "fields": {
+        "account": 3,
+        "statement": 9,
+        "date": "2022-02-17",
+        "cost": "77",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 28,
+    "fields": {
+        "account": 3,
+        "statement": 9,
+        "date": "2022-01-26",
+        "cost": "52",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 29,
+    "fields": {
+        "account": 4,
+        "statement": 10,
+        "date": "2021-12-01",
+        "cost": "28",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 30,
+    "fields": {
+        "account": 4,
+        "statement": 10,
+        "date": "2021-12-11",
+        "cost": "26",
+        "paymentMethod": "Visa"
+    }
+    }
+    ,
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 31,
+    "fields": {
+        "account": 4,
+        "statement": 10,
+        "date": "2021-12-26",
+        "cost": "64",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 32,
+    "fields": {
+        "account": 4,
+        "statement": 11,
+        "date": "2022-01-04",
+        "cost": "75",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 33,
+    "fields": {
+        "account": 4,
+        "statement": 11,
+        "date": "2022-01-17",
+        "cost": "46",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 34,
+    "fields": {
+        "account": 4,
+        "statement": 11,
+        "date": "2022-01-26",
+        "cost": "73",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 35,
+    "fields": {
+        "account": 4,
+        "statement": 12,
+        "date": "2022-02-03",
+        "cost": "38",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 36,
+    "fields": {
+        "account": 4,
+        "statement": 12,
+        "date": "2022-02-18",
+        "cost": "36",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 37,
+    "fields": {
+        "account": 4,
+        "statement": 12,
+        "date": "2022-02-23",
+        "cost": "48",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 38,
+    "fields": {
+        "account": 5,
+        "statement": 13,
+        "date": "2021-12-02",
+        "cost": "57",
+        "paymentMethod": "Visa"
+    }
+    }
+    ,
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 39,
+    "fields": {
+        "account": 5,
+        "statement": 13,
+        "date": "2021-12-16",
+        "cost": "46",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 40,
+    "fields": {
+        "account": 5,
+        "statement": 13,
+        "date": "2021-12-26",
+        "cost": "48",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 41,
+    "fields": {
+        "account": 5,
+        "statement": 14,
+        "date": "2022-01-02",
+        "cost": "23",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 42,
+    "fields": {
+        "account": 5,
+        "statement": 14,
+        "date": "2022-01-24",
+        "cost": "76",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 43,
+    "fields": {
+        "account": 5,
+        "statement": 14,
+        "date": "2022-01-25",
+        "cost": "84",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 44,
+    "fields": {
+        "account": 5,
+        "statement": 15,
+        "date": "2022-02-04",
+        "cost": "46",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 45,
+    "fields": {
+        "account": 5,
+        "statement": 15,
+        "date": "2022-01-17",
+        "cost": "38",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+    "model": "UWEFlixApp.Transaction",
+    "pk": 46,
+    "fields": {
+        "account": 5,
+        "statement": 15,
+        "date": "2022-01-28",
+        "cost": "48",
+        "paymentMethod": "Visa"
+    }
+    },
+    {
+        "model": "UWEFlixApp.Screen",
+        "pk": 1,
+        "fields": {
+            "number": "1",
+            "noSeats": "200"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Screen",
+        "pk": 2,
+        "fields": {
+            "number": "2",
+            "noSeats": "250"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Screen",
+        "pk": 3,
+        "fields": {
+            "number": "3",
+            "noSeats": "150"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Screen",
+        "pk": 4,
+        "fields": {
+            "number": "4",
+            "noSeats": "300"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Screen",
+        "pk": 5,
+        "fields": {
+            "number": "5",
+            "noSeats": "200"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Film",
+        "pk": 1,
+        "fields": {
+            "title": "The Dark Knight",
+            "ageRating": "12A",
+            "duration": "02:32:00",
+            "description": "A gang of criminals robs a Gotham City mob bank; the Joker manipulates them into murdering each other for a higher share until only he remains and escapes with the money. Batman, District Attorney Harvey Dent and Lieutenant Jim Gordon form an alliance to rid Gotham of organized crime."
+        }
+    },
+    {
+        "model": "UWEFlixApp.Film",
+        "pk": 2,
+        "fields": {
+            "title": "Spider-Man: No Way Home",
+            "ageRating": "12A",
+            "duration": "02:28:00",
+            "description": "When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man. Peter Parker's secret identity is revealed to the entire world. Desperate for help, Peter turns to Doctor Strange to make the world forget that he is Spider-Man."
+        }
+    },
+    {
+        "model": "UWEFlixApp.Film",
+        "pk": 3,
+        "fields": {
+            "title": "The Batman",
+            "ageRating": "15",
+            "duration": "02:56:00",
+            "description": "A reclusive billionaire who obsessively protects Gotham City as a masked vigilante to cope with his traumatic past. Batman is around 30 years old and is not yet an experienced crime fighter, as director Matt Reeves wanted to explore the character before he becomes fully formed."
+        }
+    },
+    {
+        "model": "UWEFlixApp.Film",
+        "pk": 4,
+        "fields": {
+            "title": "Star Wars: The Last Jedi",
+            "ageRating": "PG",
+            "duration": "02:32:00",
+            "description": "The Last Jedi follows Rey as she seeks the aid of Luke Skywalker, in hopes of turning the tide for the Resistance in the fight against Kylo Ren and the First Order, while General Leia Organa, Finn, and Poe Dameron attempt to escape a First Order attack on the dwindling Resistance fleet."
+        }
+    },
+    {
+        "model": "UWEFlixApp.Film",
+        "pk": 5,
+        "fields": {
+            "title": "Harry Potter and the Prisoner of Azkaban",
+            "ageRating": "PG",
+            "duration": "02:22:00",
+            "description": "The book follows Harry Potter, a young wizard, in his third year at Hogwarts School of Witchcraft and Wizardry. Along with friends Ronald Weasley and Hermione Granger, Harry investigates Sirius Black, an escaped prisoner from Azkaban, the wizard prison, believed to be one of Lord Voldemort's old allies."
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 1,
+        "fields": {
+            "screen": 1,
+            "film": 1,
+            "date": "2022-05-03",
+            "time": "14:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 2,
+        "fields": {
+            "screen": 2,
+            "film": 2,
+            "date": "2022-05-03",
+            "time": "15:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 3,
+        "fields": {
+            "screen": 3,
+            "film": 3,
+            "date": "2022-05-04",
+            "time": "13:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 4,
+        "fields": {
+            "screen": 4,
+            "film": 4,
+            "date": "2022-05-04",
+            "time": "15:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 5,
+        "fields": {
+            "screen": 5,
+            "film": 5,
+            "date": "2022-05-04",
+            "time": "17:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 6,
+        "fields": {
+            "screen": 1,
+            "film": 2,
+            "date": "2022-05-04",
+            "time": "17:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 7,
+        "fields": {
+            "screen": 2,
+            "film": 3,
+            "date": "2022-05-04",
+            "time": "18:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 8,
+        "fields": {
+            "screen": 3,
+            "film": 4,
+            "date": "2022-05-04",
+            "time": "16:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 9,
+        "fields": {
+            "screen": 4,
+            "film": 5,
+            "date": "2022-05-04",
+            "time": "19:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 10,
+        "fields": {
+            "screen": 5,
+            "film": 1,
+            "date": "2022-05-04",
+            "time": "20:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 11,
+        "fields": {
+            "screen": 1,
+            "film": 3,
+            "date": "2022-05-04",
+            "time": "20:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 12,
+        "fields": {
+            "screen": 2,
+            "film": 4,
+            "date": "2022-05-04",
+            "time": "21:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 13,
+        "fields": {
+            "screen": 3,
+            "film": 5,
+            "date": "2022-05-04",
+            "time": "19:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 14,
+        "fields": {
+            "screen": 4,
+            "film": 1,
+            "date": "2022-05-04",
+            "time": "22:00:00"
+        }
+    },
+    {
+        "model": "UWEFlixApp.Showing",
+        "pk": 15,
+        "fields": {
+            "screen": 5,
+            "film": 2,
+            "date": "2022-05-04",
+            "time": "21:00:00"
+        }
+    }
+    
+
+
+
+  ]

@@ -1,0 +1,50 @@
+{% block registeredClubs %}
+<h2>Registered Clubs</h2>
+    {% if clubs %}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Street No.</th>
+                <th>Street Name</th>
+                <th>Postcode</th>
+                <th>Landline</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>DOB</th>
+                <th>Actions</th>
+            </tr>
+            {% for club in clubs %}
+            <tr>
+                <td>{{ club.id }}</td>
+                <td>{{ club.name }}</td>
+                <td>{{ club.streetNo }}</td>
+                <td>{{ club.streetName }}</td>
+                <td>{{ club.postCode }}</td>
+                <td>{{ club.landline }}</td>
+                <td>{{ club.mobile }}</td>
+                <td>{{ club.email }}</td>
+                <td>{{ club.firstName }}</td>
+                <td>{{ club.lastName }}</td>
+                <td>{{ club.dob }}</td>
+                <td>
+                    <form id="action">
+                        <input id="actionButton" type="button" value="Edit">
+                    </form>
+                    <form id="action" action="{% url 'manager' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="accountID" value="{{ account.id }}">
+                        <input type="hidden" name="deleteClub" value="True">
+                        <input type="hidden" name="clubID" value="{{ club.id }}">
+                        <input id="actionButton" type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>There are no clubs registered.</p>
+    {% endif %}
+{% endblock %}
